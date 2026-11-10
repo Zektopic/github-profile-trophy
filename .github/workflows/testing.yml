@@ -11,7 +11,7 @@ on:
 
 jobs:
   install-dependencies:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, manupa-hnx]
 
     strategy:
       matrix:
@@ -21,6 +21,9 @@ jobs:
       # Step 1: Checkout repository
       - name: Git Checkout Deno Module
         uses: actions/checkout@v4
+
+      - name: Configure Git safe directory
+        run: git config --global --add safe.directory '*'
 
       # Step 2: Setup Deno
       - name: Setup Deno
