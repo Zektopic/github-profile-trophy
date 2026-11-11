@@ -11,7 +11,7 @@ on:
 
 jobs:
   install-dependencies:
-    runs-on: [self-hosted, manupa-hnx]
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
